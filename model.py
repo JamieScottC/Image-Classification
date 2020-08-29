@@ -26,6 +26,7 @@ def getData(imageList):
     for image in imageList:
         imageOpen = PIL.Image.open(image)
         images.append(imageOpen)
+        imageOpen.close()
         label = str(image[-5])
         labels.append(label)
     return np.array(images), np.array(labels)
